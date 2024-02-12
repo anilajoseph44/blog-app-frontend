@@ -7,7 +7,7 @@ class PostApiService
   Future<dynamic>addPost(String userId,String post)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://172.16.185.169:3001/api/post/add");
+    var apiurl=Uri.parse("http://192.168.83.62:3001/api/post/add");
     var response=await client.post(apiurl,
       headers: <String,String>{
       "Content-Type":"application/json; charset=UTF-8"

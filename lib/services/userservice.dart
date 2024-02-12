@@ -8,7 +8,7 @@ class BlogApiService
   Future<dynamic>LoginAPI(String email,String password)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://172.16.185.169:3001/api/vlog/signin");
+    var apiurl=Uri.parse("http://192.168.83.62:3001/api/vlog/signin");
     var response=await client.post(apiurl,
     headers: <String,String>{
       "Content-Type":"application/json; charset=UTF-8"
@@ -35,7 +35,7 @@ class BlogApiService
   Future<dynamic>SendData(String name,String age,String mobno,String address,String pincode,String email,String password)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://172.16.185.169:3001/api/vlog/signup");
+    var apiurl=Uri.parse("http://192.168.83.62:3001/api/vlog/signup");
     var response=await client.post(apiurl,
     headers: <String,String>{
       "Content-Type":"application/json; charset=UTF-8"
