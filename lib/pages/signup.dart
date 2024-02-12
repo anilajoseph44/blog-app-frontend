@@ -146,7 +146,7 @@ class _SignupPageState extends State<SignupPage> {
                       {
                         Navigator.pop(context);
                       },
-                      child: Text("Login")),
+                      child: Text("Back to Login")),
                 )
               ],
             ),
