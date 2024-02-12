@@ -1,5 +1,6 @@
-import 'dart:math';
 
+
+import 'package:blog_app_frontend/services/userservice.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -19,6 +20,28 @@ class _SignupPageState extends State<SignupPage> {
   TextEditingController password=new TextEditingController();
   TextEditingController confirmpassword=new TextEditingController();
   @override
+
+  void SendValuesToApi()async
+  {
+    final response=await BlogApiService().SendData(
+        name.text,
+        age.text,
+        mobilenumber.text,
+        address.text,
+        pincode.text,
+        email.text,
+        password.text);
+    if(response["status"]=="success")
+      {
+        
+        print("successfully added........................................");
+
+      }
+    else
+      {
+        print("error occured while adding.................................");
+      }
+  }
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -104,10 +127,7 @@ class _SignupPageState extends State<SignupPage> {
                         borderRadius: BorderRadius.zero
                       )
                     ),
-                      onPressed: ()
-                      {
-
-                      },
+                      onPressed: SendValuesToApi,
                       child: Text("Register")),
                 ),
                 SizedBox(height: 10,),
